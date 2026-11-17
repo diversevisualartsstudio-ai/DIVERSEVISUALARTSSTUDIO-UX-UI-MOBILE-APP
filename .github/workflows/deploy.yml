@@ -23,8 +23,10 @@ jobs:
           test -s app.js
           grep -q '<main' index.html
           grep -q 'function render' app.js
-      - name: Configure Pages
+      - name: Configure and enable GitHub Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
       - name: Upload static site
         uses: actions/upload-pages-artifact@v3
         with:
